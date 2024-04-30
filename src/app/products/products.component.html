@@ -1,0 +1,17 @@
+<p>Check Our Products!</p>
+
+<div class="rounded">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 col-lg-3 col-sm-4 col-xl-2" *ngFor="let prod of availableProducts">
+                <div class="card mb-4">
+                    {{prod.name}}
+                    <hr><br>
+                    {{prod.price}}
+                    <hr><br>
+                    {{prod.stock}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
