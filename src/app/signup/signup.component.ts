@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent {
   registerData:User = {
-    username: "",
-    password: ""
+    Username: "",
+    Password: ""
   };
   registerForm!:FormGroup;
   submitted:boolean = false;
@@ -34,8 +34,8 @@ export class SignupComponent {
 
   Register(){
     if (this.registerForm.valid){
-      this.registerData.username = this.registerForm.controls['username'].value;
-      this.registerData.password = this.registerForm.controls['password'].value;
+      this.registerData.Username = this.registerForm.controls['username'].value;
+      this.registerData.Password = this.registerForm.controls['password'].value;
       this.authService.RegisterServ(this.registerData).subscribe(data => {
         if (data){
           this.submitted = true;

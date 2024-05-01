@@ -13,16 +13,16 @@ export class LoginComponent {
   invalidLogin:boolean = false;
   flag:boolean = false;
   loginData:User = {
-    username: "",
-    password: ""
+    Username: "",
+    Password: ""
   }
 
   constructor(private authService:AuthService, private router:Router) { }
 
   Login(form:NgForm){
     if (form.valid){
-      this.loginData.username = form.value.username;
-      this.loginData.password = form.value.password;
+      this.loginData.Username = form.value.username;
+      this.loginData.Password = form.value.password;
       this.authService.LoginServ(this.loginData).subscribe(data => {
         if (data){
           this.flag = true;
