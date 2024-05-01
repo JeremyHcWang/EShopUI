@@ -19,7 +19,7 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   RegisterServ(registerData:User):Observable<boolean> {
-    return this.http.post<boolean>("https://authapp.jollystone-4c42e2d6.eastus2.azurecontainerapps.io/register", registerData).pipe(map((response:any) => {
+    return this.http.post<boolean>("https://authapp.kindsea-b647d6a0.eastus.azurecontainerapps.io/register", registerData).pipe(map((response:any) => {
       if (response) {
         return true;
       } else {
@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   LoginServ(loginData:User):Observable<boolean>{
-    return this.http.post<boolean>("https://authapp.jollystone-4c42e2d6.eastus2.azurecontainerapps.io/login", loginData).pipe(map((response: any) => {
+    return this.http.post<boolean>("https://authapp.kindsea-b647d6a0.eastus.azurecontainerapps.io/login", loginData).pipe(map((response: any) => {
       if (response){
         localStorage.setItem('token', response.jwtToken);
         localStorage.setItem('username', response.username);
