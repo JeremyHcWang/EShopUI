@@ -19,11 +19,11 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   RegisterServ(registerData:User):Observable<boolean> {
-    return this.http.post<boolean>("", registerData);
+    return this.http.post<boolean>("https://authapp.jollystone-4c42e2d6.eastus2.azurecontainerapps.io/register", registerData);
   }
 
   LoginServ(loginData:User):Observable<boolean>{
-    return this.http.post<boolean>("", loginData).pipe(map((response: any) => {
+    return this.http.post<boolean>("https://authapp.jollystone-4c42e2d6.eastus2.azurecontainerapps.io/login", loginData).pipe(map((response: any) => {
       if (response){
         localStorage.setItem('token', response.JWTToken);
         localStorage.setItem('username', response.Username);
